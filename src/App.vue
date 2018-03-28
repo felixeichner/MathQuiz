@@ -2,7 +2,7 @@
   <div>
     <Header></Header>
     <hr>
-    <div class="container">
+    <div class="container main-content">
       <QuizBox></QuizBox>
     </div>
   </div>
@@ -23,5 +23,10 @@ export default {
 <style lang="scss">
   div {
     color: #323232;
+  }
+  .main-content {
+    padding: 3rem;
+    border-radius: 5px;
+    border: 3px solid #721c24;
   }
 </style>

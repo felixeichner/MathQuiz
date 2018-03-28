@@ -15,11 +15,12 @@
         </div>
       </div>
     </div>
+    <hr style="border-bottom: 1px solid #721c24">
     <div class="card">
       <div class="card-header">
         <h4>{{ item1 | taskMessage(operator, item2) }}</h4>
       </div>
-      <transition appear name="flipcard" mode="out-in">
+      <transition name="flipcard" mode="out-in">
         <div class="card-body" v-if="currentGame" key="game">
           <div class="row">
             <div class="col-6" v-for="option in 4" :key="option">
@@ -111,16 +112,26 @@ export default {
     justify-content: flex-end;
     align-items: flex-end;
   }  
-
-  .flipcard-enter {
-    opacity: 0;
-  }
   .flipcard-enter-active {
-    transition: opacity 0.2s linear;
-    // opacity: 1;
+    animation: flip-in 0.3s ease-out forwards;
   }
   .flipcard-leave-active {
-    transition: opacity 0.1s linear;
-    opacity: 0;
+    animation: flip-out 0.3s ease-out forwards;
+  }
+  @keyframes flip-in {
+    from {
+      transform: rotateY(90deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  }
+  @keyframes flip-out {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(90deg);
+    }
   }
 </style>
