@@ -1,7 +1,6 @@
 <template>
   <div>
     <Header></Header>
-    <hr>
     <div class="container main-content">
       <QuizBox></QuizBox>
     </div>
@@ -25,8 +24,10 @@ export default {
     color: #323232;
   }
   .main-content {
+    margin-top: 3rem;
     padding: 3rem;
     border-radius: 5px;
     border: 3px solid #721c24;
+    max-width: 650px;
   }
 </style>
